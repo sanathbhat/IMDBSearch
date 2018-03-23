@@ -1,5 +1,5 @@
 # IMDBSearch
-A small web scraping project to search IMDB movie titles by various aspects of the movies using BeautifulSoup
+A small web scraping project to search IMDB movie titles from the [Top 1000 movies list](http://www.imdb.com/search/title?groups=top_1000&sort=user_rating&view=simple) by various aspects of the movies using BeautifulSoup
 
 You can use the API by simply importing the Top1000Search class, instantiating it and calling the search() method for searching through all aspects of the movies. There are other search methods for individual aspects that return sets instead of lists of movies, however some of them may not be implemented yet.
 
