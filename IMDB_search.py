@@ -10,7 +10,7 @@ class Top1000Search:
     def __init__(self):
         http = urllib3.PoolManager()
         page = 'http://www.imdb.com/search/title?groups=top_1000&sort=user_rating&view=advanced&page='
-        for i in range(1, 51):
+        for i in range(1, 21):
             url = page + str(i)
             raw_html = http.request('GET', url).data.decode('utf-8')
             soup = BeautifulSoup(raw_html, 'lxml')
