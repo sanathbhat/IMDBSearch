@@ -19,3 +19,8 @@ print(ts.search('frank'))
 
 Returns ["It's a Wonderful Life", 'Batman: Mask of the Phantasm', 'It Happened One Night', 'Sin City', 'The Green Mile', 'The Shawshank Redemption', 'Arsenic and Old Lace', 'Mr. Smith Goes to Washington']
 (movies directed by directors with 'frank' in their name, for eg. frank darabont, frank capra)
+
+# Update:
+Added a new class Top1000Search2 that uses Pandas and performs better searches including partial name matches. Eg 'steven' matches 'steven', 'stevens', 'stevenson' etc
+The new search has the exact same syntax and a sample is shown in test.py
+Performance takes a hit compared to the Top1000Search (takes upto a second for search results compared to a microsecond in Top1000Search). But this search is flexible, scales better for including search over other aspects and is much more simplified and easy to understand without a complicated data structure to create and update.
