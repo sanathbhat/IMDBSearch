@@ -22,5 +22,7 @@ Returns ["It's a Wonderful Life", 'Batman: Mask of the Phantasm', 'It Happened O
 
 # Update:
 Added a new class Top1000Search2 that uses Pandas and performs better searches including partial name matches. Eg 'steven' matches 'steven', 'stevens', 'stevenson' etc
+
 The new search has the exact same syntax and a sample is shown in test.py
+
 Performance takes a hit compared to the Top1000Search (takes upto a second for search results compared to a microsecond in Top1000Search). But this search is flexible, scales better for including search over other aspects and is much more simplified and easy to understand without a complicated data structure to create and update.
