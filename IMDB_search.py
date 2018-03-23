@@ -59,7 +59,6 @@ class Top1000Search:
         # Not yet implemented
         return set()
 
-
     def search(self, term):
         term = term.lower()
         return list(self.search_director(term) | self.search_actor(term) | self.search_genre(term))
