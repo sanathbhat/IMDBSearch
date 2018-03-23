@@ -1,7 +1,6 @@
 import urllib3
 from bs4 import BeautifulSoup
 import bs4
-import re
 
 
 class Top1000Search:
@@ -38,6 +37,7 @@ class Top1000Search:
                                     self.dir_name_parts[np].add(director)
                                 else:
                                     self.dir_name_parts[np] = set([director])
+
                     i += 1
 
 
@@ -61,4 +61,4 @@ class Top1000Search:
 
 
     def search(self, term):
-        return list(self.search_director(term) | self.search_actor(term))
+        return list(self.search_director(term) | self.search_actor(term) | self.search_genre(term))
