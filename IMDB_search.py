@@ -41,7 +41,7 @@ class Top1000Search:
                     i += 1
 
 
-    def search_director(self, name_part):
+    def search_by_director(self, name_part):
         if name_part not in self.dir_name_parts:
             return set()
         directors = self.dir_name_parts[name_part]
@@ -54,11 +54,13 @@ class Top1000Search:
     def search_actor(self, name_part):
         # Not yet implemented
         return set()
+    
 
     def search_genre(self, genre):
         # Not yet implemented
         return set()
 
+
     def search(self, term):
         term = term.lower()
-        return list(self.search_director(term) | self.search_actor(term) | self.search_genre(term))
+        return list(self.search_by_director(term) | self.search_actor(term) | self.search_genre(term))
