@@ -20,7 +20,7 @@ class Top1000Search3:
         http = urllib3.PoolManager()
         page = 'http://www.imdb.com/search/title?groups=top_1000&sort=user_rating&view=advanced&page='
         rows = []
-        for i in range(14, 15):
+        for i in range(1, 21):
             url = page + str(i)
             raw_html = http.request('GET', url).data.decode('utf-8')
             soup = BeautifulSoup(raw_html, 'lxml')
@@ -46,8 +46,6 @@ class Top1000Search3:
                 genre_tag = movie_tag.contents[3].find(class_='genre')
                 genres = genre_tag.string.lstrip('\n').rstrip().lower().split(', ')
 
-                print(movie)
-
                 # time to update the index with the parsed values
                 self.index.update(title_terms, movie, Priority.Title.value)
                 for actor in actors:
@@ -61,4 +59,6 @@ class Top1000Search3:
 
     def search(self, terms):
         results = self.index.lookup(terms.split(' '))
-        return results.keys()
+        if len(results)>0:
+            return [r[0] for r in results]
+        return 'No results found'

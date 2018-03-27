@@ -22,4 +22,9 @@ from IMDB_search3 import Top1000Search3
 t1 = time.time()
 ts3 = Top1000Search3()
 print(time.time()-t1)
-print(ts3.search('wachowski'))
+t2 = time.time()
+print(ts3.search('spielberg'))
+print(ts3.search('spielberg hanks'))     # movies with 'spielberg and 'hanks' prioritized over only 'spielberg' or 'hanks'
+print(ts3.search('scorsese leonardo'))
+print(ts3.search('ryan'))                # movies with 'ryan' in title ranked higher than 'ryan' in actor
+print(time.time()-t2)
